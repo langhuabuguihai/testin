@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Add custom styles here if needed */
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Weather App</h1>
+    <div class="form-group">
+      <label for="cityInput">Enter City:</label>
+      <input type="text" class="form-control" id="cityInput" placeholder="Enter city name">
+      <button type="button" class="btn btn-primary mt-2" onclick="fetchWeather()">Get Weather</button>
+    </div>
+    <div class="card mt-3" id="weather-info">
+      <!-- Weather information will be dynamically added here -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies (for responsive features) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    async function fetchWeather() {
+      const city = document.getElementById('cityInput').value;
+      const url = `https://the-weather-api.p.rapidapi.com/api/weather/${encodeURIComponent(city)}`;
+      const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '32bcbd2193msh1b74720b08ea1ecp18f982jsn70ee284922be',
+            'X-RapidAPI-Host': 'the-weather-api.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+
+        // Update HTML content with weather information
+        const weatherInfo = document.getElementById('weather-info');
+        if (data.success) {
+          weatherInfo.innerHTML = `
+            <div class="card-body">
+              <h5 class="card-title">${data.data.city}</h5>
+              <p class="card-text">Current Weather: ${data.data.current_weather}</p>
+              <p class="card-text">Temperature: ${data.data.temp}°C</p>
+              <p class="card-text">Humidity: ${data.data.humidity}</p>
+              <p class="card-text">Air Quality Index (AQI): ${data.data.aqi} (${data.data.aqi_remark})</p>
+            </div>
+          `;
+        } else {
+          weatherInfo.innerHTML = `<div class="card-body"><p class="card-text text-danger">${data.message}</p></div>`;
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>

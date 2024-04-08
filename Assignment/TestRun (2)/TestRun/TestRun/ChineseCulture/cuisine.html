@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel= "shortcut icon" type="image/x-icon" href="../Assets/HomePage/malaysia.png">
+    <title>Chinese Culture</title>
+
+    <!--Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--CSS style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="chinese.css">
+
+    <!-- CSS style -->
+    <style>
+        .h2{
+            color:#fff;
+            margin-top: 60px;
+            font-size: 50px;
+        }
+        .cuisine-img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .card {
+            position: relative;
+            border: black solid 2px;
+            overflow: hidden;
+        }
+        .portfolio-box-caption {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            color: #fff;
+            background: rgba(244, 98, 58, 0.9);
+            transition: opacity 0.25s ease;
+            text-align: center;
+            font-size: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .portfolio-box-caption:hover {
+            opacity: 1;
+        }
+
+        .project-category{
+            color:black;
+            font-size:28px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="overflow-scroll">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="../HomePage/First.html"><img src= "../Assets/HomePage/logo.jpg" alt= "Home" width="60" height ="55"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Chinese</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Malay</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Indian</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../AboutUs/aboutUs.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="h2">Chinese Cuisines</div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/HerbalChicken.jpg" class="card-img-top cuisine-img" alt="HerbalChicken" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50"><b>Herbal Chicken</b></div>
+                            <div class="project-name">Chinese herbal chicken soup is a chicken soup loaded with different herbs. It's said to be very effective in boosting the body's warmth and energy. Chinese herbal chicken soup is easy to make, as it only requires a few ingredients like dried herbs, garlic, ginger, and chicken. The key is to balance the flavors from the herbs. Chinese herbal chicken soup does not contain any added preservatives or artificial flavors.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/DimSum.jpg" class="card-img-top cuisine-img" alt="DimSum" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Dim Sum</div>
+                            <div class="project-name">Many dim sum dishes are made of seafood, chopped meats, or vegetables wrapped in dough or thin wrappings and steamed, deep-fried, or pan-fried. A traditional dim sum brunch includes various types of steamed buns, such as cha siu bao, rice or wheat dumplings, and rice noodle rolls that contain a range of ingredients, including beef, chicken, pork, prawns, and vegetarian options. Many dim sum restaurants also offer plates of steamed green vegetables, stuffed eggplant, stuffed green peppers, roasted meats, congee and other soups. Dessert dim sum is also available and can be ordered at any time since there is not a set sequence for the meal.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/dumplings.jpg" class="card-img-top cuisine-img" alt="Dumplings" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption"> 
+                            <div class="project-category text-white-50">Dumplings</div>
+                            <div class="project-name">Dumplings are a broad category of dishes found in various cuisines worldwide, but they are particularly prominent in Chinese cuisine. Generally, dumplings consist of small pieces of dough, often filled with meat, vegetables, or both, which are then either boiled, steamed, fried, or baked. In Chinese cuisine, dumplings are known as "jiaozi" (饺子) or "baozi" (包子), depending on their shape and preparation method.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <a class="portfolio-box">
+                        <img src="../Assets/ChineseAssets/steamboat.jpg" class="card-img-top cuisine-img" alt="Steamboat" data-toggle="modal" data-target="#HerbalChickenModal">
+                        <div class="portfolio-box-caption">               
+                            <div class="project-category text-white-50">Steamboat</div>
+                            <div class="project-name">Chinese steamboat, also known as Chinese hot pot or simply "hot pot" (火锅, huǒguō), is a popular cooking method and communal dining experience in Chinese cuisine. It involves a simmering pot of broth placed in the center of the dining table, where diners cook a variety of raw ingredients, such as thinly sliced meat, seafood, vegetables, tofu, and noodles.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="../ChineseCulture/index.html" class="btn btn-primary return-button">Back</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

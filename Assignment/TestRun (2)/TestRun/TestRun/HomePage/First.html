@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel= "shortcut icon" type="image/x-icon" href="../Assets/HomePage/malaysia.png">
+  <link rel="stylesheet" href = "homepage.css">
+  <title>Welcome!</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="First.html"><img src= "../Assets/HomePage/logo.jpg" alt= "Home" width="60" height ="55"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../ChineseCulture/index.html">Chinese</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Malay</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../IndiaCulture/Index.html">Indian</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../AboutUs/aboutUs.html">About Us</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="centered-text">
+      <h1>Malaysia, where we are borned</h1>
+    </div>
+  </div>
+
+  <!-- Video Section -->
+  <div class ="video-container">
+    <iframe width="1080" height="600" src="https://www.youtube.com/embed/8V7czbc0kxg?si=4bkQ7BT6NWOmfv7_" 
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <div class="culture-container">
+    <div class="culture" id="culture1">
+      <a href="../ChineseCulture/index.html" target="_blank">
+        <div class="culture-content">
+          <div class="culture-image">
+            <img src="../Assets/HomePage/lion-head.png" alt="Culture 1 Image">
+          </div>
+          <div class="culture-info">
+            <h2>Chinese</h2>
+            <p>Click here for more detail</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="culture" id="culture2">
+      <a href="#" target="_blank">
+        <div class="culture-content">
+          <div class="culture-image">
+            <img src="../Assets/HomePage/ketupat.png" alt="Culture 2 Image">
+          </div>
+          <div class="culture-info">
+            <h2>Malay</h2>
+            <p>Click here for more detail</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="culture" id="culture3">
+      <a href="../IndiaCulture/Index.html" target="_blank">
+        <div class="culture-content">
+          <div class="culture-image">
+            <img src="../Assets/HomePage/murukku.png" alt="Culture 3 Image">
+          </div>
+          <div class="culture-info">
+            <h2>India</h2>
+            <p>Click here for more detail</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <a href="../FeedBack/feedback.html">
+    <button class="fixed-button">
+      <img src="../Assets/FeedBack/messenger.png" alt="message icon" width = 25px height = 25px>
+    </button>
+  </a>
+
+  <div class="container mt-5">
+    <h1 class="mb-4"><i class="fas fa-cloud-sun"></i> Weather Check</h1>
+    <div class="form-group">
+      <label for="cityInput">Enter your City:</label>
+      <input type="text" class="form-control" id="cityInput" placeholder="Enter city name">
+      <button type="button" class="btn btn-primary mt-2" onclick="fetchWeather()">Get Weather</button>
+    </div>
+      <div class="card mt-3" id="weather-info"></div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies (for responsive features) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    async function fetchWeather() {
+      const city = document.getElementById('cityInput').value;
+      const url = `https://the-weather-api.p.rapidapi.com/api/weather/${encodeURIComponent(city)}`;
+      const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '32bcbd2193msh1b74720b08ea1ecp18f982jsn70ee284922be',
+            'X-RapidAPI-Host': 'the-weather-api.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+
+        // Update HTML content with weather information
+        const weatherInfo = document.getElementById('weather-info');
+        if (data.success) {
+          weatherInfo.innerHTML = `
+            <div class="card-body">
+              <h5 class="card-title">${data.data.city}</h5>
+              <p class="card-text">Current Weather: ${data.data.current_weather}</p>
+              <p class="card-text">Temperature: ${data.data.temp}°C</p>
+              <p class="card-text">Humidity: ${data.data.humidity}</p>
+              <p class="card-text">Air Quality Index (AQI): ${data.data.aqi} (${data.data.aqi_remark})</p>
+            </div>
+          `;
+
+          weatherInfo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+
+        } else {
+          weatherInfo.innerHTML = `<div class="card-body"><p class="card-text text-danger">${data.message}</p></div>`;
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  </script>
+
+
+  <!-- Bootstrap JS (required for navbar toggle) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

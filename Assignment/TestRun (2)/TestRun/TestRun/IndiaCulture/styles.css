@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../Assets/IndiaAssets/Background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    background-color: #D71B6A;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Styles for the button */
+.button {
+    display: inline-block;
+    background-color: #007bff; /* Blue background color */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+
+section {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+    padding: 20px;
+
+h2 {
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center !important;
+}
+
+.Cuisine-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.Cuisine-text {
+    flex: 1;
+}
+
+.Cuisine-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cuisine-text h2 {
+    color: #333;
+    text-align: center;
+}
+
+.Cuisine-text p {
+    color: #666;
+    text-align: center;
+}
+
+.Cuisine-image img {
+    max-width: 100%;
+    max-height: 100%;
+    /* Limiting the size of the image */
+    max-width: 600px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+}
+
+.collapsible-btn {
+    background-color: #D71B6A;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.collapsible-content {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.collapsible-content img {
+    max-width: 100%;
+}
+
+
+}
+
+.back-button {
+    position: fixed; /* Set the position to fixed */
+    bottom: 20px; /* Adjust the distance from the bottom */
+    right: 20px; /* Adjust the distance from the right */
+    background-color: white; /* Set the default background color */
+    color: blue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition effect */
+}
+
+.back-button:hover {
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+
+
+}
+

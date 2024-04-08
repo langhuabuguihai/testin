@@ -1,0 +1,73 @@
+@media (max-width: 768px) {
+  .video-container {
+      max-width: 500px; /* Set the maximum width for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .video-container {
+      max-width: 300px; /* Set the maximum width for even smaller screens */
+  }
+}
+
+
+body {
+background-image: url('../Assets/ChineseAssets/background.jpg');
+background-size: cover;
+background-position: center;
+height: 100vh;
+background-repeat: no-repeat;
+background-attachment: fixed;
+font-family: 'Lato', sans-serif; 
+font-size: 20px;
+margin:0;
+}
+
+.content{
+position :relative;
+top:5%;
+border-radius: 20px;
+padding:10px;
+overflow-y: auto;
+background-color: rgba(255,255,255,0.7);
+width: 75%;
+max-width: none;
+margin:auto;
+}
+
+.h2{
+font-weight: bold;
+font-size: 36px;
+margin-top: 10px;
+margin-left: 20px;
+text-align: center;
+}
+
+.content .video-container{
+display:flex;
+flex-direction: column;
+align-items: center;
+}
+
+.video-container{
+margin-bottom: 10px;
+}
+
+.video-container video{
+width: 100%;
+height:auto;
+max-width:800px;
+border-radius: 25px;
+}
+
+.return-button{
+position: fixed;
+bottom: 20px;
+right: 20px;
+color:blue;
+background-color: #f8f9fa; 
+}
+
+
+
+
